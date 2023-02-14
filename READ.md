@@ -6,17 +6,8 @@ The classic Tic Tac Toe game implemented using React
 # Roadmap of Future Improvements
 1) Modify the Square component so that clicking is disabled after the first click. Once a player has entered X or O the square should be disabled. Use a new state variable ('filled') inside the Square component that is initially false and is set to true once it has been clicked. Use the this state to assign it to the disabled property of button:
 
-    <button
-      disabled = {filled}
-      onClick={() => {
-        setTik(takeTurn(id));
-        setFilled(true);
-        console.log(`Square: ${id} filled by player : ${tik}`);
-      }}
-    >
-      <h1 className = {tik == 1 ? 'red' : 'black'}>
-        {mark[tik]}
-      </h1>
+    <button disabled = {filled} onClick={() => {setTik(takeTurn(id)); setFilled(true);}}>
+    ...
     </button>
     
 2) Disable all squares once a winner is determined or all 9 squres have been clicked. For this to be possible, the Board parent component would have to pass a new prop to the Square children components to force them all to get disabled
